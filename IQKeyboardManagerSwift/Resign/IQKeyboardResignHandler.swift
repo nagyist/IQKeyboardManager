@@ -145,10 +145,8 @@ import IQKeyboardCore
         }
 
         // (Issue #2109) Ignore Apple Pencil touches to prevent conflicts with floating keyboard on iPad
-        if #available(iOS 9.1, *) {
-            if touch.type == .pencil {
-                return false
-            }
+        if touch.type == .pencil {
+            return false
         }
 
         return true

@@ -30,17 +30,15 @@ class NavigationController: UINavigationController {
 
         self.navigationBar.barTintColor = UIColor.white
 
-        if #available(iOS 13.0, *) {
-            let navigationBarAppearance = UINavigationBarAppearance()
-            navigationBarAppearance.configureWithTransparentBackground()
-            navigationBarAppearance.backgroundColor = UIColor.white
-
-            navigationBar.standardAppearance = navigationBarAppearance
-            navigationBar.compactAppearance = navigationBarAppearance
-            navigationBar.scrollEdgeAppearance = navigationBarAppearance
-            if #available(iOS 15.0, *) {
-                navigationBar.compactScrollEdgeAppearance = navigationBarAppearance
-            }
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithTransparentBackground()
+        navigationBarAppearance.backgroundColor = UIColor.white
+        
+        navigationBar.standardAppearance = navigationBarAppearance
+        navigationBar.compactAppearance = navigationBarAppearance
+        navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        if #available(iOS 15.0, *) {
+            navigationBar.compactScrollEdgeAppearance = navigationBarAppearance
         }
 
         navigationBar.setBackgroundImage(UIImage(), for: .default)

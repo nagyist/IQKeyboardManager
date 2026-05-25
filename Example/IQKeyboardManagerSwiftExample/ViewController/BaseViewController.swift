@@ -83,11 +83,9 @@ extension BaseViewController {
                 self.presentUsing(style: .popover, sender: sender)
             }))
 
-            if #available(iOS 13, *) {
-                controller.addAction(.init(title: "Automatic", style: .default, handler: { _ in
-                    self.presentUsing(style: .automatic, sender: sender)
-                }))
-            }
+            controller.addAction(.init(title: "Automatic", style: .default, handler: { _ in
+                self.presentUsing(style: .automatic, sender: sender)
+            }))
 
             controller.addAction(.init(title: "Cancel", style: .cancel))
 

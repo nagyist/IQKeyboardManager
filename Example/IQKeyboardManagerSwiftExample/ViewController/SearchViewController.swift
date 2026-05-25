@@ -50,11 +50,7 @@ class SearchViewController: BaseTableViewController, UISearchResultsUpdating, UI
         self.searchController.searchBar.scopeButtonTitles = ["All", "Name", "Email"]
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.sizeToFit()
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-        } else {
-            self.tableView.tableHeaderView = self.searchController.searchBar
-        }
+        navigationItem.searchController = searchController
     }
 
     func searchForText(_ searchText: String?, scope: Int) {
